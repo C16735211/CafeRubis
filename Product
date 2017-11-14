@@ -1,0 +1,11 @@
+class Product
+{
+  String name;
+  float price;
+  
+  Product(String s, float _x)
+  {
+    name = s;
+    price = _x;
+  }
+}
