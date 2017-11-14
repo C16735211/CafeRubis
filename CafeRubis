@@ -1,0 +1,34 @@
+Product[] products;
+
+Table table;
+
+void setup()
+{
+  size(800, 600);
+  loadData();
+}
+
+void draw()
+{
+  background(255);
+}
+
+void loadData()
+{
+  table = loadTable("cafe.csv", "header");
+  
+  products = new Product[table.getRowCount()];
+  
+  for(int i = 0; i < table.getRowCount(); i++)
+  {
+    TableRow row = table.getRow(i);
+    
+    String name = row.getString("Name");
+    float price = row.getFloat("Price");
+    
+    products[i] = new Product(name, price);
+    
+    println("cafe.csv");
+    
+  }
+}
